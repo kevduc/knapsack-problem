@@ -7,13 +7,16 @@ const Matrix = require('./matrix.js')
 
 const dynamicKnapsack = function (weightCap, weights, values, itemNum = weights.length, memo = new Matrix()) {
   const numItems = weights.length
-  if (itemNum === 0 || numItems === 0 || weightCap <= 0) return 0
-  if (memo.get(itemNum, weightCap) !== undefined) return memo.get(itemNum, weightCap)
 
-  const weight = weights[itemNum - 1]
-  const value = values[itemNum - 1]
+  if (itemNum === 0 || numItems === 0 || weightCap === 0) return 0 // The result is 0 when we take no item OR there's no item to take OR we don't have any weight allowance (cannot carry anything)
 
-  const bestValueWithoutCurrentItem = dynamicKnapsack(weightCap, weights, values, itemNum - 1, memo) // we don't take the item
+  if (memo.get(itemNum, weightCap) !== undefined) return memo.get(itemNum, weightCap) // return the memoized result if it exists
+  // else compute the result:
+
+  const weight = weights[itemNum - 1] // current item weight
+  const value = values[itemNum - 1] // current item value
+
+  const bestValueWithoutCurrentItem = dynamicKnapsack(weightCap, weights, values, itemNum - 1, memo) // we don't take the item: no value is added and the weightCap is left unchanged
 
   const result =
     weight > weightCap
@@ -24,7 +27,7 @@ const dynamicKnapsack = function (weightCap, weights, values, itemNum = weights.
           value + dynamicKnapsack(weightCap - weight, weights, values, itemNum - 1, memo) // we take the item: we add its value to the result but decrease the weightCap by its weight
         )
 
-  memo.set(itemNum, weightCap, result)
+  memo.set(itemNum, weightCap, result) // save the result
 
   // memo.print()
   return result
