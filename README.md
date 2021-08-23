@@ -1,4 +1,4 @@
-# knapsack-problem
+# 🎒 knapsack-problem
  Definition of the problem: [0-1 Knapsack Problem | DP-10](https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/)  
  Problem discovered on [codeacademy.com](https://www.codecademy.com/) (pro trial):
  [The Knapsack Problem](https://www.codecademy.com/paths/pass-the-technical-interview-with-javascript/tracks/javascript-interview-prep-and-algorithm-practice/modules/javascript-algorithm-practice/articles/the-knapsack-problem)
