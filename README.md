@@ -3,6 +3,8 @@
  Problem discovered on [codeacademy.com](https://www.codecademy.com/) (pro trial):
  [The Knapsack Problem](https://www.codecademy.com/paths/pass-the-technical-interview-with-javascript/tracks/javascript-interview-prep-and-algorithm-practice/modules/javascript-algorithm-practice/articles/the-knapsack-problem)
  
+ To run: `node index.js`
+ 
 ## 🎯 Goal
 Using *dynamic programming* 🏃‍♂️ and *memoization* 🧠 to solve the problem
 
